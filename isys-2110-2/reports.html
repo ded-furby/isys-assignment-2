@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reports | Chicken Jockey Coordination System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="reports.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="logo">CJCS</div>
+        <nav class="sidebar-nav">
+            <button class="nav-item">MISSIONS</button>
+            <button class="nav-item">UNITS</button>
+            <button class="nav-item tracking-nav">TRACKING</button>
+            <button class="nav-item comms-nav">COMMS</button>
+            <button class="nav-item active">REPORTS</button>
+            <button class="nav-item">SETTINGS</button>
+        </nav>
+    </aside>
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="topbar">
+            <h1 class="app-title">REPORTS DASHBOARD</h1>
+            <div class="user-profile">
+                <span>USER</span>
+                <div class="user-icon">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <circle cx="12" cy="8" r="4" fill="currentColor"/>
+                        <path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8" fill="currentColor"/>
+                    </svg>
+                </div>
+            </div>
+        </header>
+        <div class="content-section report-section">
+            <div class="section-header">
+                <h2>Report Summary</h2>
+            </div>
+            <div class="report-filters">
+                <select id="report-mission-type">
+                    <option value="all">Mission Type</option>
+                    <option value="recon">Recon</option>
+                    <option value="combat">Combat</option>
+                    <option value="supply">Supply</option>
+                    <option value="training">Training</option>
+                </select>
+                <select id="report-date-range">
+                    <option value="all">Date Range</option>
+                    <option value="7">Last 7 Days</option>
+                    <option value="30">Last 30 Days</option>
+                    <option value="90">Last 90 Days</option>
+                </select>
+            </div>
+            <div class="report-summary-cards">
+                <div class="report-card">
+                    <div class="card-label">Total Missions</div>
+                    <div class="card-value" id="total-missions">0</div>
+                </div>
+                <div class="report-card">
+                    <div class="card-label">Avg Duration</div>
+                    <div class="card-value" id="avg-duration">0 hr 0 min</div>
+                </div>
+                <div class="report-card">
+                    <div class="card-label">Delayed Missions</div>
+                    <div class="card-value" id="delayed-missions">0</div>
+                </div>
+            </div>
+            <div class="report-chart-container">
+                <div class="chart-title">Mission Duration</div>
+                <canvas id="mission-duration-chart" width="600" height="220"></canvas>
+            </div>
+            <div class="report-actions">
+                <button class="btn-report" id="download-pdf">PDF</button>
+                <button class="btn-report" id="download-csv">CSV</button>
+            </div>
+        </div>
+    </main>
+</div>
+<script src="reports.js"></script>
+</body>
+</html>

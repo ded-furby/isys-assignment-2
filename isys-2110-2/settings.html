@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Chicken Jockey Coordination System</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">CJCS</div>
+            <nav class="sidebar-nav">
+                <button class="nav-item">MISSIONS</button>
+                <button class="nav-item">UNITS</button>
+                <button class="nav-item tracking-nav">TRACKING</button>
+                <button class="nav-item comms-nav">COMMS</button>
+                <button class="nav-item">REPORTS</button>
+                <button class="nav-item active">SETTINGS</button>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <header class="topbar">
+                <h1 class="app-title">SYSTEM SETTINGS</h1>
+                <div class="user-profile">
+                    <span>USER</span>
+                    <div class="user-icon">
+                        <svg viewBox="0 0 24 24" width="24" height="24">
+                            <circle cx="12" cy="8" r="4" fill="currentColor"/>
+                            <path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8" fill="currentColor"/>
+                        </svg>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Settings Section -->
+            <section class="content-section">
+                <div class="section-header">
+                    <h2>SYSTEM CONFIGURATION</h2>
+                </div>
+
+                <!-- Settings Navigation -->
+                <div class="settings-nav">
+                    <button class="settings-nav-item active" data-tab="general">General</button>
+                    <button class="settings-nav-item" data-tab="notifications">Notifications</button>
+                    <button class="settings-nav-item" data-tab="security">Security</button>
+                    <button class="settings-nav-item" data-tab="appearance">Appearance</button>
+                </div>
+
+                <!-- Settings Content -->
+                <div class="settings-content">
+                    <!-- General Settings -->
+                    <div class="settings-panel active" id="general">
+                        <h3>General Settings</h3>
+                        <div class="settings-group">
+                            <div class="setting-item">
+                                <label>System Name</label>
+                                <input type="text" value="Chicken Jockey Coordination System" class="settings-input">
+                            </div>
+                            <div class="setting-item">
+                                <label>Time Zone</label>
+                                <select class="settings-input">
+                                    <option>UTC</option>
+                                    <option>EST</option>
+                                    <option>PST</option>
+                                </select>
+                            </div>
+                            <div class="setting-item">
+                                <label>Date Format</label>
+                                <select class="settings-input">
+                                    <option>MM/DD/YYYY</option>
+                                    <option>DD/MM/YYYY</option>
+                                    <option>YYYY-MM-DD</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Notifications Settings -->
+                    <div class="settings-panel" id="notifications">
+                        <h3>Notification Settings</h3>
+                        <div class="settings-group">
+                            <div class="setting-item">
+                                <label>Email Notifications</label>
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="email-notifications" checked>
+                                    <label for="email-notifications"></label>
+                                </div>
+                            </div>
+                            <div class="setting-item">
+                                <label>Mission Updates</label>
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="mission-updates" checked>
+                                    <label for="mission-updates"></label>
+                                </div>
+                            </div>
+                            <div class="setting-item">
+                                <label>Unit Status Changes</label>
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="unit-status" checked>
+                                    <label for="unit-status"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Security Settings -->
+                    <div class="settings-panel" id="security">
+                        <h3>Security Settings</h3>
+                        <div class="settings-group">
+                            <div class="setting-item">
+                                <label>Two-Factor Authentication</label>
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="2fa">
+                                    <label for="2fa"></label>
+                                </div>
+                            </div>
+                            <div class="setting-item">
+                                <label>Session Timeout (minutes)</label>
+                                <input type="number" value="30" class="settings-input">
+                            </div>
+                            <div class="setting-item">
+                                <label>Password Change Required</label>
+                                <select class="settings-input">
+                                    <option>Every 30 days</option>
+                                    <option>Every 60 days</option>
+                                    <option>Every 90 days</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Appearance Settings -->
+                    <div class="settings-panel" id="appearance">
+                        <h3>Appearance Settings</h3>
+                        <div class="settings-group">
+                            <div class="setting-item">
+                                <label>Theme</label>
+                                <select class="settings-input">
+                                    <option>Light</option>
+                                    <option>Dark</option>
+                                    <option>System</option>
+                                </select>
+                            </div>
+                            <div class="setting-item">
+                                <label>Font Size</label>
+                                <select class="settings-input">
+                                    <option>Small</option>
+                                    <option>Medium</option>
+                                    <option>Large</option>
+                                </select>
+                            </div>
+                            <div class="setting-item">
+                                <label>Color Scheme</label>
+                                <select class="settings-input">
+                                    <option>Default</option>
+                                    <option>High Contrast</option>
+                                    <option>Custom</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Save Button -->
+                <div class="settings-actions">
+                    <button class="btn-save">Save Changes</button>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="settings.js"></script>
+</body>
+</html> 
