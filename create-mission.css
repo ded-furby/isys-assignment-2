@@ -1,0 +1,331 @@
+/* Create Mission Page Styles - Inverted Theme */
+
+/* Use Inter font for all text */
+* {
+    font-family: 'Inter', sans-serif;
+}
+
+.create-header h2 {
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+/* Form Layout */
+.create-mission-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+/* Form Section Styling */
+.form-section {
+    background-color: var(--sidebar-bg);
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+.section-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+    letter-spacing: 1px;
+}
+
+/* Form Fields */
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    font-size: 14px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Date Time Container */
+.date-time-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+/* Unit List */
+.unit-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.unit-item {
+    display: flex;
+    align-items: center;
+}
+
+.unit-item input[type="checkbox"] {
+    width: auto;
+    margin-right: 8px;
+    accent-color: var(--accent-color);
+}
+
+.unit-item label {
+    margin-bottom: 0;
+    font-weight: normal;
+}
+
+/* Mission Route Map */
+.route-map-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.route-map {
+    width: 100%;
+    min-height: 250px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.map-placeholder {
+    width: 100%;
+    height: 100%;
+    min-height: 250px;
+    background-color: var(--input-bg);
+    position: relative;
+    cursor: crosshair;
+}
+
+.map-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.grid-line {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.grid-line.horizontal {
+    width: 100%;
+    height: 1px;
+}
+
+.grid-line.horizontal:nth-child(1) {
+    top: 25%;
+}
+
+.grid-line.horizontal:nth-child(2) {
+    top: 50%;
+}
+
+.grid-line.horizontal:nth-child(3) {
+    top: 75%;
+}
+
+.grid-line.vertical {
+    height: 100%;
+    width: 1px;
+}
+
+.grid-line.vertical:nth-child(4) {
+    left: 25%;
+}
+
+.grid-line.vertical:nth-child(5) {
+    left: 50%;
+}
+
+.grid-line.vertical:nth-child(6) {
+    left: 75%;
+}
+
+.map-instructions {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: var(--inactive-color);
+    font-size: 12px;
+}
+
+.route-point {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: var(--text-color);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: var(--bg-color);
+    font-weight: bold;
+    z-index: 2;
+}
+
+.route-line {
+    position: absolute;
+    height: 2px;
+    background-color: var(--accent-color);
+    transform-origin: left center;
+    z-index: 1;
+}
+
+.route-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Form Actions */
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    padding-top: 15px;
+    border-top: 1px solid var(--border-color);
+}
+
+.btn-cancel, 
+.btn-save,
+.btn-secondary {
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-cancel {
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+}
+
+.btn-save {
+    background-color: var(--active-color);
+    border: none;
+    color: var(--bg-color);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    font-size: 12px;
+    padding: 6px 12px;
+}
+
+.btn-cancel:hover {
+    background-color: var(--hover-color);
+}
+
+.btn-save:hover {
+    opacity: 0.9;
+}
+
+.btn-secondary:hover {
+    background-color: var(--hover-color);
+}
+
+/* Notification */
+.notification {
+    position: fixed;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--sidebar-bg);
+    padding: 12px 25px;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px var(--shadow-color);
+    opacity: 0;
+    transition: all 0.5s ease;
+    z-index: 1000;
+}
+
+.notification.show {
+    bottom: 20px;
+    opacity: 1;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .create-mission-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .unit-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .date-time-container {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .unit-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .form-section {
+        padding: 15px;
+    }
+    
+    .unit-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-actions {
+        flex-direction: column-reverse;
+        gap: 10px;
+    }
+    
+    .btn-cancel, 
+    .btn-save {
+        width: 100%;
+        text-align: center;
+    }
+} 
